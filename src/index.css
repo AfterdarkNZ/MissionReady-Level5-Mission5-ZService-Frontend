@@ -16,4 +16,10 @@ body {
   line-height: 1;
   font-weight: 400;
   overflow-x: hidden;
+  --color-orange: #ed560e;
+  --color-yellow: #ffcb08;
+  --color-blue: #2f27a4;
+  --color-dark-blue: #1e196a;
+  --color-dark-grey: #353535;
+  --color-white: #f8f8f8;
 }
