@@ -141,7 +141,12 @@ export default function Footer() {
           <button className={styles.contactButton}>
             <p className={styles.contactButtonText}>Contact us</p>
             <div className={styles.contactButtonIcon}>
-              <ArrowRight size={24} color="#ed560e" weight="bold" />
+              <ArrowRight
+                size={24}
+                color="#ed560e"
+                weight="bold"
+                className={styles.arrowIcon}
+              />
             </div>
           </button>
           <ul className={styles.socialLinks}>
