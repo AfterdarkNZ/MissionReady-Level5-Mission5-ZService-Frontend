@@ -1,11 +1,15 @@
 import "./App.css";
-import Header from "./components/header/Header";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home/Home";
+import FindStation from "./pages/FindStation/FindStation";
 
 function App() {
   return (
     <>
-      <Header />
-      <div>Home</div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/find-station" element={<FindStation />} />
+      </Routes>
     </>
   );
 }
