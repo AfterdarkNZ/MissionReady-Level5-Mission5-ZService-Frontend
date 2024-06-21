@@ -155,6 +155,7 @@ export default function Footer() {
                 url="https://www.facebook.com/"
                 style={{ height: 30, width: 30 }}
                 bgColor="#ed560e"
+                className={styles.socialIcon}
               />
             </li>
             <li>
@@ -162,6 +163,7 @@ export default function Footer() {
                 url="https://www.instagram.com/"
                 style={{ height: 30, width: 30 }}
                 bgColor="#ed560e"
+                className={styles.socialIcon}
               />
             </li>
             <li>
@@ -169,6 +171,7 @@ export default function Footer() {
                 url="https://www.linkedin.com/"
                 style={{ height: 30, width: 30 }}
                 bgColor="#ed560e"
+                className={styles.socialIcon}
               />
             </li>
           </ul>
