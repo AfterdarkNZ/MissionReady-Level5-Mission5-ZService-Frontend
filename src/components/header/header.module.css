@@ -19,4 +19,9 @@
 .navLink {
   font-size: 12px;
   font-weight: bold;
+  cursor: pointer;
+}
+
+.underlined:hover {
+  text-decoration: underline;
 }
