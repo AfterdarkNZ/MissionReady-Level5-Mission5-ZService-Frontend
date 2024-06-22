@@ -1,11 +1,17 @@
 import styles from "./Footer.module.css";
+import { ArrowRight } from "@phosphor-icons/react";
+import { SocialIcon } from "react-social-icons";
 
 export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.grid}>
         <div className={styles.logoCol}>
-          <a href="#" className={styles.logoLink}>
+          <a
+            href="/"
+            className={styles.logoLink}
+            aria-label="Z energy homepage"
+          >
             <img
               className={styles.logo}
               src="/images/z-logo.png"
@@ -14,109 +20,117 @@ export default function Footer() {
           </a>
         </div>
 
-        <nav className={styles.productsServicesCol}>
-          <p className={styles.footerHeading}>Products and Services</p>
+        <nav className={styles.linksCol}>
+          <a className={styles.footerHeading} href="/">
+            Products and Services
+          </a>
           <ul className={styles.footerNav}>
             <li>
-              <a className={styles.footerLink} href="#">
+              <a className={styles.footerLink} href="/">
                 At the station
               </a>
             </li>
             <li>
-              <a className={styles.footerLink} href="#">
+              <a className={styles.footerLink} href="/">
                 Z App
               </a>
             </li>
             <li>
-              <a className={styles.footerLink} href="#">
+              <a className={styles.footerLink} href="/">
                 Power your home with Z
               </a>
             </li>
             <li>
-              <a className={styles.footerLink} href="#">
+              <a className={styles.footerLink} href="/">
                 Rewards and promotions
               </a>
             </li>
           </ul>
         </nav>
 
-        <nav className={styles.productsServicesCol}>
-          <p className={styles.footerHeading}>For businesses</p>
+        <nav className={styles.linksCol}>
+          <a className={styles.footerHeading} href="/">
+            For businesses
+          </a>
           <ul className={styles.footerNav}>
             <li>
-              <a className={styles.footerLink} href="#">
+              <a className={styles.footerLink} href="/">
                 Z Business fuel card
               </a>
             </li>
             <li>
-              <a className={styles.footerLink} href="#">
-                Fuels and businesses
+              <a className={styles.footerLink} href="/">
+                Fuels and services
               </a>
             </li>
             <li>
-              <a className={styles.footerLink} href="#">
+              <a className={styles.footerLink} href="/">
                 Business tips and stories
               </a>
             </li>
           </ul>
         </nav>
 
-        <nav className={styles.productsServicesCol}>
-          <p className={styles.footerHeading}>Sustainability</p>
+        <nav className={styles.linksCol}>
+          <a className={styles.footerHeading} href="/">
+            Sustainability
+          </a>
           <ul className={styles.footerNav}>
             <li>
-              <a className={styles.footerLink} href="#">
+              <a className={styles.footerLink} href="/">
                 Our sustainability goals
               </a>
             </li>
             <li>
-              <a className={styles.footerLink} href="#">
+              <a className={styles.footerLink} href="/">
                 Nature restoration
               </a>
             </li>
             <li>
-              <a className={styles.footerLink} href="#">
+              <a className={styles.footerLink} href="/">
                 Supplier Code of Conduct
               </a>
             </li>
             <li>
-              <a className={styles.footerLink} href="#">
+              <a className={styles.footerLink} href="/">
                 Supporting electric vehicles
               </a>
             </li>
           </ul>
         </nav>
 
-        <nav className={styles.productsServicesCol}>
-          <p className={styles.footerHeading}>About Z</p>
+        <nav className={styles.linksCol}>
+          <a className={styles.footerHeading} href="/">
+            About Z
+          </a>
           <ul className={styles.footerNav}>
             <li>
-              <a className={styles.footerLink} href="#">
+              <a className={styles.footerLink} href="/">
                 Out story
               </a>
             </li>
             <li>
-              <a className={styles.footerLink} href="#">
+              <a className={styles.footerLink} href="/">
                 What we stand for
               </a>
             </li>
             <li>
-              <a className={styles.footerLink} href="#">
+              <a className={styles.footerLink} href="/">
                 Our people
               </a>
             </li>
             <li>
-              <a className={styles.footerLink} href="#">
+              <a className={styles.footerLink} href="/">
                 News
               </a>
             </li>
             <li>
-              <a className={styles.footerLink} href="#">
+              <a className={styles.footerLink} href="/">
                 Careers at Z
               </a>
             </li>
             <li>
-              <a className={styles.footerLink} href="#">
+              <a className={styles.footerLink} href="/">
                 Corporate centre
               </a>
             </li>
@@ -127,36 +141,38 @@ export default function Footer() {
           <button className={styles.contactButton}>
             <p className={styles.contactButtonText}>Contact us</p>
             <div className={styles.contactButtonIcon}>
-              <ion-icon
-                className={styles.rightIcon}
-                name="arrow-forward-outline"
-              ></ion-icon>
+              <ArrowRight
+                size={24}
+                color="#ed560e"
+                weight="bold"
+                className={styles.arrowIcon}
+              />
             </div>
           </button>
           <ul className={styles.socialLinks}>
             <li>
-              <a className={styles.socialIconBackground}>
-                <ion-icon
-                  className={styles.socialIcon}
-                  name="logo-facebook"
-                ></ion-icon>
-              </a>
+              <SocialIcon
+                url="https://www.facebook.com/"
+                style={{ height: 30, width: 30 }}
+                bgColor="#ed560e"
+                className={styles.socialIcon}
+              />
             </li>
             <li>
-              <a className={styles.socialIconBackground}>
-                <ion-icon
-                  className={styles.socialIcon}
-                  name="logo-instagram"
-                ></ion-icon>
-              </a>
+              <SocialIcon
+                url="https://www.instagram.com/"
+                style={{ height: 30, width: 30 }}
+                bgColor="#ed560e"
+                className={styles.socialIcon}
+              />
             </li>
             <li>
-              <a className={styles.socialIconBackground}>
-                <ion-icon
-                  className={styles.socialIcon}
-                  name="logo-linkedin"
-                ></ion-icon>
-              </a>
+              <SocialIcon
+                url="https://www.linkedin.com/"
+                style={{ height: 30, width: 30 }}
+                bgColor="#ed560e"
+                className={styles.socialIcon}
+              />
             </li>
           </ul>
         </div>
@@ -166,22 +182,22 @@ export default function Footer() {
         <nav className={styles.footerLegal}>
           <ul className={styles.footerLegalList}>
             <li>
-              <a className={styles.legalLink} href="#">
+              <a className={styles.legalLink} href="/">
                 Privacy
               </a>
             </li>
             <li>
-              <a className={styles.legalLink} href="#">
+              <a className={styles.legalLink} href="/">
                 Terms of use
               </a>
             </li>
             <li>
-              <a className={styles.legalLink} href="#">
+              <a className={styles.legalLink} href="/">
                 Fuel Safety Data Sheets
               </a>
             </li>
             <li>
-              <a className={styles.legalLink} href="#">
+              <a className={styles.legalLink} href="/">
                 Investor relations
               </a>
             </li>
@@ -189,11 +205,16 @@ export default function Footer() {
         </nav>
         <div className={styles.copyright}>
           <p className={styles.copyText}>
-            &copy;{" "}
-            <span className={styles.year}>
-              {new Date().getFullYear()} Z Energy Limited
-            </span>
+            &copy; Z Energy Limited.All trademarks are used under license.
           </p>
+          <a href="#" id="shielded-logo">
+            <img
+              alt="shielded"
+              src="https://shielded.co.nz/img/custom-logo.png"
+              height="36"
+              width="36"
+            />
+          </a>
         </div>
       </div>
     </footer>

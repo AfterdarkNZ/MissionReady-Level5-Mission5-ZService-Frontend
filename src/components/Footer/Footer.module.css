@@ -1,3 +1,152 @@
 .footer {
-  padding: 8rem 0 9.6rem;
+  padding-top: 8rem;
+}
+
+.grid {
+  max-width: 120rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 6rem;
+}
+
+.logo {
+  width: 5.4rem;
+  height: 5.4rem;
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+.linksCol {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 2rem 0 4.8rem;
+}
+
+.footerHeading:link,
+.footerHeading:visited {
+  color: var(--color-orange);
+  font-size: 1.6rem;
+  line-height: 1.6;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footerNav {
+  display: flex;
+  flex-flow: column;
+  gap: 2rem;
+  list-style: none;
+}
+
+.footerLink:link,
+.footerLink:visited {
+  color: var(--color-orange);
+  font-size: 1.4rem;
+  line-height: 1.4;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footerLink:hover,
+.footerLink:visited,
+.footerHeading:hover,
+.footerHeading:visited {
+  text-decoration: underline;
+}
+
+.contactButton {
+  height: 4.8rem;
+  width: 16rem;
+  background-image: linear-gradient(to right, #ed560e, #ed8c0e);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  border-radius: 2.4rem;
+  margin-bottom: 3.2rem;
+  cursor: pointer;
+}
+
+.contactButton:hover {
+  opacity: 0.8;
+}
+
+.arrowIcon {
+  transition: all 0.3s ease-in-out;
+}
+
+.contactButton:hover .arrowIcon {
+  transform: translateX(0.2rem);
+}
+
+.contactButton:active .arrowIcon {
+  transform: translateX(3.6rem);
+}
+
+.contactButtonText {
+  color: var(--color-white);
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-left: 2rem;
+}
+
+.contactButtonIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.6rem;
+  height: 3.6rem;
+  background-color: var(--color-white);
+  border-radius: 50%;
+  margin-right: 0.6rem;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  list-style: none;
+  align-items: flex-end;
+  margin-right: 1.6rem;
+}
+
+.socialIcon:hover {
+  opacity: 0.8;
+}
+
+.footerDivider {
+  border-top: 0.5px solid #ddd;
+  width: 67%;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 120rem;
+  margin: 3.6rem auto 8rem;
+}
+
+.footerLegalList {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.legalLink,
+.copyright {
+  color: var(--color-dark-grey);
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
 }

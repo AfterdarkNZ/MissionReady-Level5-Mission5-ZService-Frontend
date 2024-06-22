@@ -1,5 +1,5 @@
-import Footer from "../../components/Footer/Footer";
 import Header from "../../components/header/Header";
+import Footer from "../../components/Footer/Footer";
 
 export default function FindStation() {
   return (
