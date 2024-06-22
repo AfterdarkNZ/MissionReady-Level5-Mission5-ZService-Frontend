@@ -1,4 +1,5 @@
 import styles from "./header.module.css";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -9,7 +10,12 @@ export default function Header() {
         <li className={styles.navLink}>For business</li>
         <li className={styles.navLink}>Sustainability</li>
         <li className={styles.navLink}>About Z</li>
-        <li className={styles.navLink}>Find a Z Gas Station</li>
+        <Link
+          to="/find-station"
+          style={{ textDecoration: "none", color: "black" }}
+        >
+          <li className={styles.navLink}>Find a Z Gas Station</li>
+        </Link>
         <li className={styles.navLink}>
           <input type="text" defaultValue="search" />
         </li>
