@@ -1,0 +1,16 @@
+.titleSection {
+  background: #d8d8d8;
+  height: 70vh;
+}
+
+.title {
+  color: #ed560e;
+  font-size: 7rem;
+  padding: 5vh 3vw 0;
+}
+
+.subTitle {
+  color: grey;
+  font-size: 3rem;
+  padding: 5vh 3vw 0;
+}
