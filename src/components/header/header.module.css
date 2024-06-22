@@ -1,0 +1,27 @@
+.header {
+  height: 15vh;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 10vh;
+  margin-left: 10vw;
+}
+
+.navBar {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around;
+  width: 80vw;
+}
+
+.navLink {
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.underlined:hover {
+  text-decoration: underline;
+}
