@@ -41,10 +41,12 @@ export default function StationMap() {
         defaultZoom={12}
         className={styles.provider}
         mapId={mapID}
+        disableDefaultUI={true}
+        zoomControl={true}
       >
         {locations.map((poi) => (
           <AdvancedMarker key={poi.key} position={poi.location}>
-            {/* This pin could potentially be a png so we have our own syle*/}
+            {/* This pin could potentially be a png so we have our own style*/}
             <Pin
               background={"#FBBC04"}
               glyphColor={"#000"}
