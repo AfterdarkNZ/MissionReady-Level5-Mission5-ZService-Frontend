@@ -6,6 +6,7 @@ import {
 } from "@vis.gl/react-google-maps";
 import styles from "./StationMap.module.css";
 import { useState } from "react";
+import { MarkerClusterer } from "@googlemaps/markerclusterer";
 
 export default function StationMap() {
   const [position, setPosition] = useState({ lat: -36.89, lng: 174.7645 });
@@ -32,29 +33,31 @@ export default function StationMap() {
   const mapID = import.meta.env.VITE_MAP_ID;
 
   return (
-    <APIProvider
-      apiKey={apiKey}
-      onLoad={() => console.log("Maps API has loaded.")}
-    >
-      <Map
-        defaultCenter={position}
-        defaultZoom={12}
-        className={styles.provider}
-        mapId={mapID}
-        disableDefaultUI={true}
-        zoomControl={true}
+    <div className={styles.mapContainer}>
+      <APIProvider
+        apiKey={apiKey}
+        onLoad={() => console.log("Maps API has loaded.")}
       >
-        {locations.map((poi) => (
-          <AdvancedMarker key={poi.key} position={poi.location}>
-            {/* This pin could potentially be a png so we have our own style*/}
-            <Pin
-              background={"#FBBC04"}
-              glyphColor={"#000"}
-              borderColor={"#000"}
-            />
-          </AdvancedMarker>
-        ))}
-      </Map>
-    </APIProvider>
+        <Map
+          defaultCenter={position}
+          defaultZoom={12}
+          className={styles.provider}
+          mapId={mapID}
+          disableDefaultUI={true}
+          zoomControl={true}
+        >
+          {locations.map((poi) => (
+            <AdvancedMarker key={poi.key} position={poi.location}>
+              {/* This pin could potentially be a png so we have our own style*/}
+              <Pin
+                background={"#FBBC04"}
+                glyphColor={"#000"}
+                borderColor={"#000"}
+              />
+            </AdvancedMarker>
+          ))}
+        </Map>
+      </APIProvider>
+    </div>
   );
 }
