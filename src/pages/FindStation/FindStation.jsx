@@ -2,7 +2,7 @@ import Header from "../../components/header/Header";
 import Footer from "../../components/Footer/Footer";
 import StationMap from "../../components/StationMap/StationMap";
 import styles from "./FindStation.module.css";
-import { MapPin, GasPump, Coffee } from "@phosphor-icons/react";
+import { MapPin, GasPump, Coffee, DotsThree } from "@phosphor-icons/react";
 
 export default function FindStation() {
   return (
@@ -39,7 +39,7 @@ export default function FindStation() {
                 <span className={styles.filterText}>Coffee</span>
               </button>
               <button className={styles.filterBtn}>
-                <span className={styles.filterText}>...</span>
+                <DotsThree size={18} />
               </button>
             </div>
           </form>

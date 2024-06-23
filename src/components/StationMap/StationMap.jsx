@@ -50,9 +50,9 @@ export default function StationMap() {
             <AdvancedMarker key={poi.key} position={poi.location}>
               {/* This pin could potentially be a png so we have our own style*/}
               <Pin
-                background={"#FBBC04"}
-                glyphColor={"#000"}
-                borderColor={"#000"}
+                background={"#fff"}
+                glyphColor={"var(--color-orange)"}
+                borderColor={"var(--color-orange)"}
               />
             </AdvancedMarker>
           ))}
