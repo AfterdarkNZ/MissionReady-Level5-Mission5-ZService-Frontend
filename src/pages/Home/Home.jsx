@@ -27,6 +27,12 @@ export default function Home() {
           alt="Fuel back plan"
         />
       </InfoSections>
+      <InfoSections
+        title="What you need, made easy"
+        paragraph="Moving furniture? Hangry for a pie and barista made coffee? Have a dirty car that needs some love? Come on in — we've got you covered."
+        btnInfo="Products and services"
+        background="white"
+      ></InfoSections>
       <Footer />
     </div>
   );

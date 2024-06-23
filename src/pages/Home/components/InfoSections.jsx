@@ -3,7 +3,7 @@ import { ArrowRight } from "@phosphor-icons/react";
 
 export default function InfoSections(props) {
   return (
-    <div className={styles.flex}>
+    <div className={styles.flex} style={{ background: props.background }}>
       <div className={styles.left}>
         <h2 className={styles.sectionTitle}>{props.title}</h2>
         <p className={styles.sectionParagraph}>{props.paragraph}</p>
