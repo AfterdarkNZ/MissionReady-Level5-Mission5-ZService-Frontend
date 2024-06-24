@@ -2,3 +2,38 @@
   height: 80rem;
   /* transform: translateX(22rem); */
 }
+
+.pinInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fuelInfo {
+  width: 8.4rem;
+  height: 3.6rem;
+  background-color: #029f00;
+  border-radius: 9px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.fuelType {
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.fuelCost {
+  font-size: 1.4rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+.mapPin {
+  width: 4.4rem;
+}
