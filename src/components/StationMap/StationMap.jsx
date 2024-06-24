@@ -1580,7 +1580,7 @@ export default function StationMap() {
       >
         <Map
           defaultCenter={position}
-          defaultZoom={12}
+          defaultZoom={13}
           className={styles.provider}
           mapId={mapID}
           disableDefaultUI={true}
