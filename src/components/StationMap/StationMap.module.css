@@ -38,3 +38,6 @@
 .mapPin {
   width: 4.4rem;
 }
+.pinInfo:hover {
+  transform: scale(1.1);
+}
