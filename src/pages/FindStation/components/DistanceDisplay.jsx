@@ -1,9 +1,25 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import styles from "../FindStation.module.css";
+// require("dotenv").config();
 
-export default function DistanceDisplay() {
-  useEffect();
-
+export default function DistanceDisplay(props) {
+  const [fuelType, setFuelType] = useState("all");
+  const [stations, seStations] = useState([]);
+  useEffect(() => {
+    fetch(`http://localhost:5000/api/distance-calc`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        address: "70 Baverstock Road, Flat Bush, Auckland 2016, New Zealand",
+      }),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        seStations(result.result);
+        setFuelType(result.fuelType);
+      });
+  }, []);
+  console.log(stations);
   return (
     <div>
       <div className={styles.distanceDisplayTitleBanner}>
@@ -13,7 +29,11 @@ export default function DistanceDisplay() {
           <button className={styles.distanceDisplayBtn}>Cheapest</button>
         </div>
       </div>
-      <div className={styles.distanceDisplay}>STUFF</div>
+      <div className={styles.distanceDisplay}>
+        {stations.map((station, index) => {
+          return <div key={index}>{station.name}</div>;
+        })}
+      </div>
     </div>
   );
 }

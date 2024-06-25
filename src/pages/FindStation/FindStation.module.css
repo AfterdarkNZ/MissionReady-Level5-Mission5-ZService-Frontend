@@ -130,4 +130,6 @@
 .distanceDisplay {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+  height: 80vh;
+  overflow-y: scroll;
 }
