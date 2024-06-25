@@ -4,6 +4,7 @@ import StationMap from "../../components/StationMap/StationMap";
 import styles from "./FindStation.module.css";
 import { MapPin, GasPump, Coffee, DotsThree } from "@phosphor-icons/react";
 import DistanceDisplay from "./components/DistanceDisplay";
+import LocationInput from "./components/LocationInput";
 
 export default function FindStation() {
   return (
@@ -15,7 +16,8 @@ export default function FindStation() {
           <div className={styles.findStationTitle}>
             <h2 className={styles.titleText}>Find a Z Station</h2>
           </div>
-          <form className={styles.findStationForm}>
+          <LocationInput />
+          <form className={styles.findStationForm} style={{ display: "none" }}>
             <div className={styles.location}>
               <div className={styles.locationIcon}>
                 <MapPin size={32} color="#ed560e" weight="fill" />

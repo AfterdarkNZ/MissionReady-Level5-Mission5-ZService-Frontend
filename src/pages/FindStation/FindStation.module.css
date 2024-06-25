@@ -53,6 +53,7 @@
 .locationIcon {
   padding: 0.3rem;
   cursor: pointer;
+  height: 8vh;
 }
 
 .location,
@@ -67,6 +68,8 @@
   padding-left: 1rem;
   font-family: inherit;
   font-size: 1.6rem;
+  width: 30vw;
+  height: 8vh;
 }
 
 .filterBtn {
