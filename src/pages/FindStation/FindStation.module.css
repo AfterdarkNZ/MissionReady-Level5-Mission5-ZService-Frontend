@@ -133,3 +133,17 @@
   height: 80vh;
   overflow-y: scroll;
 }
+
+/* Card station styles */
+.stationCard {
+  width: 100%;
+  height: 50vh;
+  margin-left: 1.2vw;
+}
+
+.stationLabel {
+  font-size: 2rem;
+  color: #2f27a4;
+  margin-top: 1.2vh;
+  margin-bottom: 0.8vh;
+}

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "../FindStation.module.css";
-// require("dotenv").config();
+import CardStation from "./CardStation";
 
 export default function DistanceDisplay(props) {
   const [fuelType, setFuelType] = useState("all");
@@ -19,7 +19,6 @@ export default function DistanceDisplay(props) {
         setFuelType(result.fuelType);
       });
   }, []);
-  console.log(stations);
   return (
     <div>
       <div className={styles.distanceDisplayTitleBanner}>
@@ -31,7 +30,11 @@ export default function DistanceDisplay(props) {
       </div>
       <div className={styles.distanceDisplay}>
         {stations.map((station, index) => {
-          return <div key={index}>{station.name}</div>;
+          return (
+            <div key={index}>
+              <CardStation station={station} fuelType={fuelType} />
+            </div>
+          );
         })}
       </div>
     </div>
