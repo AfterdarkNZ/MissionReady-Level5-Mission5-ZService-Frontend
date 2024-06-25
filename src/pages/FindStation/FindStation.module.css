@@ -33,13 +33,15 @@
 
 .findStationForm,
 .locationIcon,
-.locationInput {
+.locationInput,
+.distanceDisplay {
   background-color: #fff;
   border-radius: 5px;
   border: 1.5px solid #ccc;
 }
 
-.findStationForm {
+.findStationForm,
+.distanceDisplay {
   width: 46rem;
   padding: 1rem;
   display: flex;
@@ -97,4 +99,35 @@
   background-image: linear-gradient(to right, #03a200, #014601);
   background-clip: text;
   color: transparent;
+}
+
+/* DistanceDisplay styling */
+.distanceDisplayTitleBanner {
+  display: flex;
+  background-image: linear-gradient(to left, #ed560e, #ffca08);
+  height: 7vh;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.distanceDisplayTitle {
+  font-size: 2rem;
+  padding-left: 3rem;
+  font-weight: 400;
+}
+
+.distanceDisplayBtn {
+  margin-right: 1rem;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  font-weight: 700;
+}
+
+.distanceDisplay {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }

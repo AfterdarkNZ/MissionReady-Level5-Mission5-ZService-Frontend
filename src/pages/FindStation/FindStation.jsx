@@ -3,6 +3,7 @@ import Footer from "../../components/Footer/Footer";
 import StationMap from "../../components/StationMap/StationMap";
 import styles from "./FindStation.module.css";
 import { MapPin, GasPump, Coffee, DotsThree } from "@phosphor-icons/react";
+import DistanceDisplay from "./components/DistanceDisplay";
 
 export default function FindStation() {
   return (
@@ -43,6 +44,7 @@ export default function FindStation() {
               </button>
             </div>
           </form>
+          <DistanceDisplay />
         </div>
       </div>
       <Footer />
