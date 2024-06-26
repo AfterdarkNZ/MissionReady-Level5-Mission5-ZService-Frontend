@@ -14,3 +14,91 @@
   font-size: 3rem;
   padding: 5vh 3vw 0;
 }
+
+/* Info section styling */
+.flex {
+  display: flex;
+  background-color: var(--color-white);
+  padding-bottom: 18vh;
+}
+
+/* Left styling */
+.left {
+  padding-top: 20vh;
+  padding-left: 10vw;
+  width: 50vw;
+}
+
+.sectionTitle {
+  color: #ed560e;
+  font-size: 4rem;
+  padding-bottom: 5vh;
+}
+
+.sectionParagraph {
+  font-size: 1.5rem;
+  padding-right: 4vw;
+  line-height: 150%;
+}
+
+.sectionBtn {
+  margin-top: 5vh;
+  height: 4.8rem;
+  background-image: linear-gradient(to right, #ed560e, #ed8c0e);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  border-radius: 2.4rem;
+  margin-bottom: 3.2rem;
+  cursor: pointer;
+}
+
+.sectionBtn:hover {
+  opacity: 0.8;
+}
+
+.btnText {
+  color: var(--color-white);
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.arrowDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.6rem;
+  height: 3.6rem;
+  background-color: var(--color-white);
+  border-radius: 50%;
+  margin-right: 0.6rem;
+}
+
+.arrowIcon {
+  transition: all 0.3s ease-in-out;
+}
+
+.sectionBtn:hover .arrowIcon {
+  transform: translateX(0.2rem);
+}
+
+.sectionBtn:active .arrowIcon {
+  transform: translateX(3.6rem);
+}
+
+/* Right styling */
+.right {
+  display: flex;
+  width: 50vw;
+  justify-content: center;
+  align-items: center;
+}
+
+.rightImg {
+  height: 30vh;
+  padding-right: 3vw;
+}

@@ -34,13 +34,15 @@
 
 .findStationForm,
 .locationIconContainer,
-.locationInput {
+.locationInput,
+.distanceDisplay {
   background-color: #fff;
   border-radius: 5px;
   border: 1.5px solid #ccc;
 }
 
-.findStationForm {
+.findStationForm,
+.distanceDisplay {
   width: 46rem;
   padding: 1rem;
   display: flex;
@@ -107,6 +109,136 @@
   background-image: linear-gradient(to right, #03a200, #014601);
   background-clip: text;
   color: transparent;
+}
+
+/* DistanceDisplay styling */
+.distanceDisplayTitleBanner {
+  display: flex;
+  background-image: linear-gradient(to left, #ed560e, #ffca08);
+  height: 7vh;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.distanceDisplayTitle {
+  font-size: 2rem;
+  padding-left: 3rem;
+  font-weight: 400;
+}
+
+.distanceDisplayBtn {
+  margin-right: 1rem;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  font-weight: 700;
+}
+
+.distanceDisplay {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  height: 80vh;
+  overflow-y: scroll;
+}
+
+/* Card station styles */
+.stationCard {
+  width: 100%;
+  height: 50vh;
+  margin-left: 1.2vw;
+  border-bottom: solid 1px #353535;
+}
+
+.stationLabel {
+  font-size: 2rem;
+  color: #2f27a4;
+  margin-top: 1.2vh;
+  margin-bottom: 0.8vh;
+}
+
+.stationAddress {
+  font-size: 1.3rem;
+  margin-bottom: 2vh;
+}
+
+.openFuelDiv {
+  display: flex;
+  margin-bottom: 3vh;
+}
+
+.openDiv {
+  width: 40%;
+}
+
+.opening {
+  color: #ed560e;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.7vh;
+}
+
+.phone {
+  font-size: 1.1rem;
+  color: #353535;
+}
+
+.fuelDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 7vh;
+}
+
+.z95Div,
+.z91Div,
+.zDieselDiv {
+  width: 7vw;
+  border-radius: 5px;
+  margin-right: 0.5vw;
+  height: 100%;
+  color: white;
+  text-align: center;
+}
+
+.z95Div {
+  background-color: #fd0101;
+}
+
+.z91Div {
+  background-color: #03a200;
+}
+
+.zDieselDiv {
+  background-color: black;
+}
+
+.fuelLabel {
+  margin: 1vh 0 0.5vh;
+}
+
+.fuelPrice {
+  font-size: 2rem;
+}
+
+.servicesLabel {
+  text-decoration: underline;
+  font-size: 2rem;
+  margin-bottom: 1vh;
+  color: #353535;
+}
+
+.servicesList {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.servicesListItem {
+  padding: 1rem;
+  font-size: 1.6rem;
 }
 
 /* Below 1050 pixels (small laptops) */
