@@ -3,7 +3,6 @@ import { MapPin, GasPump, Coffee, DotsThree } from "@phosphor-icons/react";
 
 import PlacesAutocomplete, {
   geocodeByAddress,
-  getLatLng,
 } from "react-places-autocomplete";
 import { setDefaults, fromLatLng } from "react-geocode";
 import { useEffect, useState } from "react";
