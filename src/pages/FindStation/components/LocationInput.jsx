@@ -1,27 +1,102 @@
 import styles from "../FindStation.module.css";
 import { MapPin, GasPump, Coffee, DotsThree } from "@phosphor-icons/react";
 
-import { useState } from "react";
 import PlacesAutocomplete, {
   geocodeByAddress,
   getLatLng,
 } from "react-places-autocomplete";
+import { setDefaults, fromLatLng } from "react-geocode";
+import { useEffect, useState } from "react";
 
-export default function LocationInput() {
-  const [address, setAddress] = useState("");
+setDefaults({
+  // Put your Google Maps API key here:
+  key: import.meta.env.VITE_MAP_API_KEY,
+});
+
+export default function LocationInput({
+  address,
+  setAddress,
+  setFuelType,
+  setStations,
+}) {
+  const [getStation, setGetStation] = useState(false);
+  const getStations = (userAddress) => {
+    fetch(`http://localhost:5000/api/distance-calc`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        address: userAddress,
+      }),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        setStations(result.result);
+        setFuelType(result.fuelType);
+      });
+  };
+
+  const useCurrentLocation = async () => {
+    if (!navigator.geolocation) {
+      console.error("Geolocation is not supported by this browser.");
+      return;
+    }
+
+    try {
+      // 1. Request current position from device
+      const position = await new Promise((resolve, reject) =>
+        navigator.geolocation.getCurrentPosition(resolve, reject)
+      );
+      const { latitude, longitude } = position.coords;
+
+      // 2. Query the reverse geocoding API
+      const address = await fromLatLng(latitude, longitude);
+      console.log("[useCurrentLocation]", { latitude, longitude, address });
+
+      // 3. Extract address components from Google Maps API response
+      const components = address.results[0]?.address_components.reduce(
+        (acc, component) => {
+          acc[component.types[0]] = component.long_name;
+          return acc;
+        },
+        {}
+      );
+
+      setAddress(
+        `${[components.street_number, components.route]
+          .filter((x) => x)
+          .join(" ")} ${
+          components.locality || components.administrative_area_level_1 || ""
+        } ${components.postal_code || ""} ${components.country || ""}`
+      );
+      setGetStation(true);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
 
   const handleSelect = async (value) => {
     const results = await geocodeByAddress(value);
-    const latLng = await getLatLng(results[0]);
     setAddress(value);
-    setCoordinates(latLng);
+    setGetStation(true);
   };
+
+  useEffect(() => {
+    if (getStation) {
+      getStations(address);
+    }
+  }, [address]);
+
   return (
     <div>
       <form className={styles.findStationForm}>
         <div className={styles.location}>
           <div className={styles.locationIcon}>
-            <MapPin size={32} color="#ed560e" weight="fill" />
+            <MapPin
+              size={32}
+              color="#ed560e"
+              weight="fill"
+              onClick={useCurrentLocation}
+            />
           </div>
           <PlacesAutocomplete
             value={address}

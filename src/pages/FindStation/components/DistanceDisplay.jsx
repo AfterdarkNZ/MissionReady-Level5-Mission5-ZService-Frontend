@@ -2,22 +2,25 @@ import { useEffect, useState } from "react";
 import styles from "../FindStation.module.css";
 import CardStation from "./CardStation";
 
-export default function DistanceDisplay(props) {
-  const [fuelType, setFuelType] = useState("all");
-  const [stations, seStations] = useState([]);
+export default function DistanceDisplay({
+  fuelType,
+  setFuelType,
+  stations,
+  setStations,
+}) {
   useEffect(() => {
-    fetch(`http://localhost:5000/api/distance-calc`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        address: "70 Baverstock Road, Flat Bush, Auckland 2016, New Zealand",
-      }),
-    })
-      .then((response) => response.json())
-      .then((result) => {
-        seStations(result.result);
-        setFuelType(result.fuelType);
-      });
+    // fetch(`http://localhost:5000/api/distance-calc`, {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify({
+    //     address: "70 Baverstock Road, Flat Bush, Auckland 2016, New Zealand",
+    //   }),
+    // })
+    //   .then((response) => response.json())
+    //   .then((result) => {
+    //     setStations(result.result);
+    //     setFuelType(result.fuelType);
+    //   });
   }, []);
   return (
     <div>
