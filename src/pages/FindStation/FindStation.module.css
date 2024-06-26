@@ -128,6 +128,11 @@
   background: none;
   border: none;
   font-weight: 700;
+  cursor: pointer;
+}
+
+.distanceDisplayBtn:disabled {
+  cursor: not-allowed;
 }
 
 .distanceDisplay {
