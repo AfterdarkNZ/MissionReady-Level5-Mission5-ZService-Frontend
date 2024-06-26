@@ -184,6 +184,9 @@ export default function CardStation({ station, fuelType }) {
             }
           })}
         </ul>
+        <div className={styles.directionBtnDiv}>
+          <button className={styles.directionBtn}>Get Directions</button>
+        </div>
       </div>
     </div>
   );

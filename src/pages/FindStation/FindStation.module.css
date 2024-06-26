@@ -145,7 +145,7 @@
 /* Card station styles */
 .stationCard {
   width: 100%;
-  height: 50vh;
+  height: 53vh;
   margin-left: 1.2vw;
   border-bottom: solid 1px #353535;
 }
@@ -237,6 +237,22 @@
 .servicesListItem {
   padding: 1rem;
   font-size: 1.6rem;
+}
+
+.directionBtnDiv {
+  width: 90%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.directionBtn {
+  background: linear-gradient(to left, #2f27a4, #1e196a);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.5rem;
+  width: 40%;
+  padding: 3% 0;
 }
 
 /* Below 1050 pixels (small laptops) */
