@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "../FindStation.module.css";
 import CardStation from "./CardStation";
 
 export default function DistanceDisplay({ fuelType, stations, setStations }) {
   const [order, setOrder] = useState("nearest");
+
   const orderStations = (btnType) => {
     setOrder(btnType);
-    const finalOrder = orderFunc(btnType);
+    const finalOrder = orderFunc(btnType) ? orderFunc(btnType) : stations;
     setStations(finalOrder);
   };
 
@@ -43,6 +44,7 @@ export default function DistanceDisplay({ fuelType, stations, setStations }) {
             style={{
               textDecoration: order === "cheapest" ? "underline" : "none",
             }}
+            disabled={fuelType === "all" ? true : false}
           >
             Cheapest
           </button>

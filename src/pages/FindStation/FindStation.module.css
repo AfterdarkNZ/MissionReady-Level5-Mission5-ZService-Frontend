@@ -131,6 +131,10 @@
   cursor: pointer;
 }
 
+.distanceDisplayBtn:disabled {
+  cursor: not-allowed;
+}
+
 .distanceDisplay {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
