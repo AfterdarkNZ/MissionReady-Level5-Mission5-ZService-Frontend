@@ -2,6 +2,7 @@
   height: 15vh;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .logo {
@@ -24,4 +25,50 @@
 
 .underlined:hover {
   text-decoration: underline;
+}
+
+/* Hamburger menu styling */
+.hamburgerMenu {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: column nowrap;
+  z-index: 10;
+}
+
+.burger {
+  width: 2rem;
+  height: 0.25rem;
+  border-radius: 10px;
+  background-color: #c58700;
+  transform-origin: 1px;
+  transition: all 0.3s linear;
+}
+
+@media (max-width: 767px) {
+  .hamburgerMenu {
+    display: block;
+    margin-right: 10px;
+    z-index: 10;
+  }
+
+  .navBar {
+    position: absolute;
+    background-color: white;
+    width: 50vw;
+    margin-top: 5vh;
+    padding-bottom: 5px;
+    top: 0;
+    right: 0;
+  }
+
+  .navLink {
+    padding: 5px 10px;
+  }
 }
