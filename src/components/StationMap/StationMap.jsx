@@ -3,20 +3,10 @@ import styles from "./StationMap.module.css";
 import { useState, useEffect } from "react";
 import { MarkerClusterer } from "@googlemaps/markerclusterer";
 
-export default function StationMap() {
-  const [position, setPosition] = useState({ lat: -36.89, lng: 174.7645 });
-  const [fuelType, setFuelType] = useState("91");
-  const [locations, setLocations] = useState([]);
-
-  // Fetch request to get all petrol stations
-  useEffect(() => {
-    const fetchStations = async () => {
-      const response = await fetch("http://localhost:5000/api/stations");
-      const data = await response.json();
-      setLocations(data);
-    };
-    fetchStations();
-  }, []);
+export default function StationMap(props) {
+  const position = props.position;
+  const fuelType = props.fuelType;
+  const locations = props.locations;
 
   const apiKey = import.meta.env.VITE_MAP_API_KEY;
   const mapID = import.meta.env.VITE_MAP_ID;
@@ -29,6 +19,7 @@ export default function StationMap() {
       >
         <Map
           defaultCenter={position}
+          // center={position}
           defaultZoom={13}
           className={styles.provider}
           mapId={mapID}
@@ -41,17 +32,22 @@ export default function StationMap() {
               position={poi.location}
               clickable={true}
               onClick={() => {
-                console.log(poi.name);
-                setPosition(poi.location);
+                // console.log(poi.name);
+                props.setPosition(poi.location);
               }}
             >
               <div className={styles.pinInfo}>
-                <div className={styles.fuelInfo}>
-                  <p className={styles.fuelType}>ZX{fuelType}</p>
-                  <p className={styles.fuelCost}>
-                    ${poi.fuelPrices[fuelType].toFixed(2)} L
-                  </p>
-                </div>
+                {!fuelType || fuelType === "all" ? (
+                  ""
+                ) : (
+                  <div className={styles.fuelInfo}>
+                    <p className={styles.fuelType}>ZX{fuelType}</p>
+                    <p className={styles.fuelCost}>
+                      ${poi.fuelPrices[fuelType].toFixed(2)} L
+                    </p>
+                  </div>
+                )}
+
                 <img
                   src="/src/assets/images/default.svg"
                   alt="Map pin"
