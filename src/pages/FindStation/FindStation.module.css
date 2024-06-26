@@ -1,5 +1,6 @@
 .mapContainer {
   position: relative;
+  overflow: hidden;
 }
 
 .formContainer {
@@ -11,7 +12,6 @@
   align-items: center;
   gap: 1.2rem;
   background-color: transparent;
-  margin-bottom: 1.2rem;
 }
 
 .findStationTitle {
@@ -53,14 +53,14 @@
 
 .locationIconContainer {
   cursor: pointer;
-  height: 8vh;
+  height: 3.6rem;
 }
 
 .location,
 .filters {
   display: flex;
   gap: 1rem;
-  flex: 1;
+  flex-grow: 1;
 }
 
 .locationInput {
@@ -68,8 +68,8 @@
   padding-left: 1rem;
   font-family: inherit;
   font-size: 1.6rem;
-  width: 38rem;
-  height: 8vh;
+  width: 39.7rem;
+  height: 3.6rem;
 }
 
 .filterBtn {
@@ -108,18 +108,35 @@
 .distanceDisplayTitleBanner {
   display: flex;
   background-image: linear-gradient(to left, #ed560e, #ffca08);
-  height: 7vh;
+  height: 6rem;
   width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px 5px 0 0;
+}
+
+.showStationCardsBtn {
+  background-color: transparent;
+  border: none;
+}
+
+.titleContainer {
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  width: 100%;
+  padding: 0 2rem;
 }
 
 .distanceDisplayTitle {
   font-size: 2rem;
-  padding-left: 3rem;
   font-weight: 400;
+}
+
+.distanceDisplayBtnDiv {
+  display: flex;
+  gap: 2rem;
 }
 
 .distanceDisplayBtn {
@@ -131,16 +148,17 @@
 }
 
 .distanceDisplay {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  height: 80vh;
+  border-radius: 0 0 5px 5px;
+  height: 50rem;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 /* Card station styles */
 .stationCard {
   width: 100%;
-  height: 50vh;
+  height: auto;
+  padding-bottom: 3rem;
   margin-left: 1.2vw;
   border-bottom: solid 1px #353535;
 }
@@ -150,6 +168,7 @@
   color: #2f27a4;
   margin-top: 1.2vh;
   margin-bottom: 0.8vh;
+  width: 90%;
 }
 
 .stationAddress {
@@ -182,15 +201,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 7vh;
+  height: 5.5rem;
 }
 
 .z95Div,
 .z91Div,
 .zDieselDiv {
-  width: 10rem;
+  width: 9rem;
   border-radius: 5px;
-  margin-right: 0.5vw;
+  margin-right: 1rem;
   height: 100%;
   color: white;
   text-align: center;
@@ -230,10 +249,16 @@
 }
 
 .servicesListItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   padding: 1rem;
   font-size: 1.6rem;
 }
 
+.showStationCardsBtn {
+  display: none;
+}
 /* Below 1050 pixels (small laptops) */
 /* Using em units, 1050/16 = 66em */
 @media (max-width: 66em) {
@@ -245,17 +270,86 @@
     font-size: 2.8rem;
   }
 
-  .findStationForm {
+  .findStationForm,
+  .distanceDisplay,
+  .distanceDisplayTitleBanner {
     width: 30rem;
   }
 
   .locationIconContainer {
-    height: 2.4rem;
-    width: 2.4rem;
+    height: 2rem;
+    width: 2rem;
   }
 
   .locationInput {
     font-size: 1.2rem;
     padding-left: 0.8rem;
+    width: 23.6rem;
+  }
+
+  .filterBtn {
+    font-size: 1rem;
+  }
+
+  .filterBtn:nth-child(3) {
+    display: none;
+  }
+
+  .distanceDisplayTitle,
+  .distanceDisplayBtn {
+    font-size: 1.6rem;
+  }
+
+  .openFuelDiv {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .servicesLabel {
+    font-size: 1.6rem;
+  }
+
+  .servicesListItem {
+    font-size: 1.4rem;
+  }
+
+  .showStationCardsBtn {
+    display: block;
+  }
+
+  .minimiseContainer {
+    position: absolute;
+    bottom: -90rem;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+/* Below 750 pixels (tablet) */
+/* Using em units, 1050/16 = 66em */
+@media (max-width: 66em) {
+  .formContainer {
+    width: 100vw;
+    top: 0;
+  }
+
+  .findStationForm,
+  .distanceDisplay,
+  .location,
+  .distanceDisplayTitleBanner {
+    width: 95vw;
+  }
+
+  .locationInput {
+    width: 70vw;
+  }
+}
+
+@media (max-width: 32em) {
+  .mapContainer {
+    height: 80vh;
+  }
+
+  .distanceDisplayTitle {
+    font-size: 1.2rem;
   }
 }

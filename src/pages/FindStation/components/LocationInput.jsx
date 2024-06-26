@@ -109,7 +109,7 @@ export default function LocationInput({
               loading,
             }) => {
               return (
-                <div>
+                <div className={styles.inputContainer}>
                   <input
                     {...getInputProps({ placeholder: "Type address" })}
                     className={styles.locationInput}

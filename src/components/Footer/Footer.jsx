@@ -205,7 +205,7 @@ export default function Footer() {
         </nav>
         <div className={styles.copyright}>
           <p className={styles.copyText}>
-            &copy; Z Energy Limited.All trademarks are used under license.
+            &copy; Z Energy Limited. All trademarks are used under license.
           </p>
           <a href="#" id="shielded-logo">
             <img

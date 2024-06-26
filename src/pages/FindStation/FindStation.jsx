@@ -20,6 +20,7 @@ export default function FindStation() {
       const response = await fetch("http://localhost:5000/api/stations");
       const data = await response.json();
       setLocations(data);
+      setStations(data);
     };
     fetchStations();
   }, []);
