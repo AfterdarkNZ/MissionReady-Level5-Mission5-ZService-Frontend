@@ -8,20 +8,6 @@ export default function DistanceDisplay({
   stations,
   setStations,
 }) {
-  useEffect(() => {
-    // fetch(`http://localhost:5000/api/distance-calc`, {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify({
-    //     address: "70 Baverstock Road, Flat Bush, Auckland 2016, New Zealand",
-    //   }),
-    // })
-    //   .then((response) => response.json())
-    //   .then((result) => {
-    //     setStations(result.result);
-    //     setFuelType(result.fuelType);
-    //   });
-  }, []);
   return (
     <div>
       <div className={styles.distanceDisplayTitleBanner}>

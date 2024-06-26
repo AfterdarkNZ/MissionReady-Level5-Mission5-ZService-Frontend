@@ -26,7 +26,7 @@ export default function FindStation() {
             setFuelType={setFuelType}
             setStations={setStations}
           />
-          <form className={styles.findStationForm} style={{ display: "none" }}>
+          {/* <form className={styles.findStationForm}>
             <div className={styles.location}>
               <div className={styles.locationIcon}>
                 <MapPin size={32} color="#ed560e" weight="fill" />
@@ -54,7 +54,7 @@ export default function FindStation() {
                 <DotsThree size={18} />
               </button>
             </div>
-          </form>
+          </form> */}
           <DistanceDisplay
             fuelType={fuelType}
             setFuelType={setFuelType}
