@@ -16,8 +16,13 @@ export default function FindStation() {
           </div>
           <form className={styles.findStationForm}>
             <div className={styles.location}>
-              <div className={styles.locationIcon}>
-                <MapPin size={32} color="#ed560e" weight="fill" />
+              <div className={styles.locationIconContainer}>
+                <MapPin
+                  size={32}
+                  color="#ed560e"
+                  weight="fill"
+                  className={styles.locationIcon}
+                />
               </div>
               <input
                 className={styles.locationInput}

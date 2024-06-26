@@ -1,6 +1,7 @@
 .mapContainer {
   position: relative;
 }
+
 .formContainer {
   position: absolute;
   top: 1.2rem;
@@ -32,7 +33,7 @@
 }
 
 .findStationForm,
-.locationIcon,
+.locationIconContainer,
 .locationInput {
   background-color: #fff;
   border-radius: 5px;
@@ -48,9 +49,18 @@
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
 }
 
-.locationIcon {
-  padding: 0.3rem;
+.locationIconContainer {
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3rem 0;
+  height: 3.6rem;
+  width: 3.6rem;
+}
+
+.locationIcon {
+  height: 100%;
 }
 
 .location,
@@ -97,4 +107,30 @@
   background-image: linear-gradient(to right, #03a200, #014601);
   background-clip: text;
   color: transparent;
+}
+
+/* Below 1050 pixels (small laptops) */
+/* Using em units, 1050/16 = 66em */
+@media (max-width: 66em) {
+  .formContainer {
+    width: 32rem;
+  }
+
+  .titleText {
+    font-size: 2.8rem;
+  }
+
+  .findStationForm {
+    width: 30rem;
+  }
+
+  .locationIconContainer {
+    height: 2.4rem;
+    width: 2.4rem;
+  }
+
+  .locationInput {
+    font-size: 1.2rem;
+    padding-left: 0.8rem;
+  }
 }
