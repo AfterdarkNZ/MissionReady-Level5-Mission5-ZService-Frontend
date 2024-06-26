@@ -247,12 +247,16 @@
 
 .directionBtn {
   background: linear-gradient(to left, #2f27a4, #1e196a);
-  color: white;
   border: none;
   border-radius: 30px;
   font-size: 1.5rem;
   width: 40%;
   padding: 3% 0;
+}
+
+.btnLink {
+  color: white;
+  text-decoration: none;
 }
 
 /* Below 1050 pixels (small laptops) */
