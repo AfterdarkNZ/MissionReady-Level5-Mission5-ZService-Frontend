@@ -138,136 +138,18 @@ export default function FindStation() {
           <div className={styles.findStationTitle}>
             <h2 className={styles.titleText}>Find a Z Station</h2>
           </div>
-          <form className={styles.findStationForm} onSubmit={handleSubmit}>
-            <div className={styles.location}>
-              <div className={styles.locationIcon}>
-                <MapPin size={32} color="#ed560e" weight="fill" />
-              </div>
-              <input
-                className={styles.locationInput}
-                type="text"
-                placeholder="Search Location"
-              />
-            </div>
-            <div className={styles.filters}>
-              <h3 className={styles.filterHeading}>Fuel Type</h3>
-              <div className={styles.fuelTypeButtons}>
-                <button
-                  type="button"
-                  className={`${styles.filterBtn} ${
-                    clickedButtons.premium ? styles.clicked : ""
-                  }`}
-                  onClick={() => {
-                    handleFuelTypeClick("premium");
-                  }}
-                >
-                  <GasPump size={18} />
-                  <span className={styles.premium}>ZX95 Premium</span>
-                </button>
-                <button
-                  type="button"
-                  className={`${styles.filterBtn} ${
-                    clickedButtons.unleaded ? styles.clicked : ""
-                  }`}
-                  onClick={() => {
-                    handleFuelTypeClick("unleaded");
-                  }}
-                >
-                  <GasPump size={18} />
-                  <span className={styles.unleaded}>Z91 Unleaded</span>
-                </button>
-                <button
-                  type="button"
-                  className={`${styles.filterBtn} ${
-                    clickedButtons.diesel ? styles.clicked : ""
-                  }`}
-                  onClick={() => {
-                    handleFuelTypeClick("diesel");
-                  }}
-                >
-                  <GasPump size={18} />
-                  <span className={styles.diesel}>Z Diesel</span>
-                </button>
-                <button
-                  type="button"
-                  className={`${styles.filterBtn} ${
-                    clickedButtons.dots ? styles.clicked : ""
-                  }`}
-                  onClick={() => {
-                    handleButtonClick("dots");
-                  }}
-                >
-                  <DotsThree size={18} />
-                </button>
-              </div>
-
-              {clickedButtons.dots && (
-                <div className={styles.extraFilters}>
-                  <hr className={styles.divider} />
-                  <h3 className={styles.filterHeading}>EV Charging</h3>
-                  {extraButtons.slice(0, 2).map(({ name, label }) => (
-                    <button
-                      key={name}
-                      type="button"
-                      className={`${styles.filterBtn} ${
-                        clickedButtons[name] ? styles.clicked : ""
-                      }`}
-                      onClick={() => handleButtonClick(name)}
-                    >
-                      {iconMapping[name]}
-                      {label}
-                    </button>
-                  ))}
-                  <hr className={styles.divider} />
-                  <h3 className={styles.filterHeading}>Services</h3>
-                  {extraButtons.slice(2, 8).map(({ name, label }) => (
-                    <button
-                      key={name}
-                      type="button"
-                      className={`${styles.filterBtn} ${
-                        clickedButtons[name] ? styles.clicked : ""
-                      }`}
-                      onClick={() => handleButtonClick(name)}
-                    >
-                      {iconMapping[name]}
-                      {label}
-                    </button>
-                  ))}
-                  <hr className={styles.divider} />
-                  <h3 className={styles.filterHeading}>Food and Drink</h3>
-                  {extraButtons.slice(8).map(({ name, label }) => (
-                    <button
-                      key={name}
-                      type="button"
-                      className={`${styles.filterBtn} ${
-                        clickedButtons[name] ? styles.clicked : ""
-                      }`}
-                      onClick={() => handleButtonClick(name)}
-                    >
-                      {iconMapping[name]}
-                      {label}
-                    </button>
-                  ))}
-                  ;{/* Clear Button and Apply Selected Button */}
-                  <div className={styles.actionButtons}>
-                    <button
-                      type="button"
-                      className={`${styles.filterBtn} ${styles.actionBtn}`}
-                      onClick={clearSelections}
-                    >
-                      Clear
-                    </button>
-                    <button
-                      type="submit"
-                      className={`${styles.filterBtn} ${styles.actionBtn}`}
-                    >
-                      Apply Selected
-                    </button>
-                  </div>
-                </div>
-              )}
-            </div>
-          </form>
+          <LocationInput
+            address={address}
+            setAddress={setAddress}
+            setFuelType={setFuelType}
+            setStations={setStations}
+          />
+          <DistanceDisplay
+            fuelType={fuelType}
+            setFuelType={setFuelType}
+            stations={stations}
+            setStations={setStations}
+          />
         </div>
       </div>
       <Footer />
