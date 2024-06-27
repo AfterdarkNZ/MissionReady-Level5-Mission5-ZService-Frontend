@@ -28,13 +28,13 @@ export default function CardStation({ station, fuelType }) {
         const diesel = station.fuelsAvailable["diesel"];
         setFuelDisplay([red, green, diesel]);
         break;
-      case "red":
+      case "95":
         setFuelDisplay([true, false, false]);
         break;
-      case "green":
+      case "91":
         setFuelDisplay([false, true, false]);
         break;
-      case "black":
+      case "diesel":
         setFuelDisplay([false, false, true]);
         break;
     }
