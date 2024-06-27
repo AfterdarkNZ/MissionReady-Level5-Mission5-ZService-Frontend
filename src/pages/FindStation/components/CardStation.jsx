@@ -184,6 +184,17 @@ export default function CardStation({ station, fuelType }) {
             }
           })}
         </ul>
+        <div className={styles.directionBtnDiv}>
+          <button className={styles.directionBtn}>
+            <a
+              href={`https://maps.google.com?q=${station.location.lat},${station.location.lng}`}
+              className={styles.btnLink}
+              target="_blank"
+            >
+              Get Directions
+            </a>
+          </button>
+        </div>
       </div>
     </div>
   );
