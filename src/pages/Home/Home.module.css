@@ -20,7 +20,9 @@
 .flex {
   display: flex;
   background-color: var(--color-white);
-  padding-bottom: 18vh;
+  padding-bottom: 9vh;
+  padding-top: 9vh;
+  align-items: center;
 }
 
 /* Left styling */
@@ -68,7 +70,8 @@
   margin-right: 2rem;
 }
 
-.arrowDiv {
+.arrowDiv,
+.arrowDivBlue {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -95,13 +98,39 @@
 .right {
   display: flex;
   width: 50vw;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  flex-direction: column;
 }
 
+/* Images */
 .rightImg {
   height: 30vh;
   padding-right: 3vw;
+}
+
+/* Buttons */
+.arrowDivBlue {
+  background-color: #2f27a4;
+}
+
+.serviceBtn {
+  width: 70%;
+  height: 10vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  border: none;
+  box-shadow: 3px 3px 3px 3px #eeeeee;
+  font-size: 2rem;
+  color: #2f27a4;
+  font-weight: 700;
+  margin-bottom: 5vh;
+}
+
+.serviceBtn:hover {
+  box-shadow: 1px 6px 3px #e2e2e2;
 }
 
 @media (max-width: 470px) {
