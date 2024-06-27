@@ -45,11 +45,7 @@ export default function Header() {
           <li className={styles.navLink}>Find a Z Gas Station</li>
         </Link>
         <li className={styles.navLink}>
-          <input
-            type="text"
-            defaultValue="search"
-            style={{ width: "15vw", height: "4vh" }}
-          />
+          <input type="text" defaultValue="search" />
         </li>
       </ul>
       <div className={styles.hamburgerMenu} onClick={toggleHamburger}>

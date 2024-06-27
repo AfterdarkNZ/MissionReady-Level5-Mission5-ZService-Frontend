@@ -130,7 +130,7 @@
 }
 
 .serviceBtn:hover {
-  box-shadow: 1px 6px 3px #e2e2e2;
+  box-shadow: 1px 6px 3px #b4b4b4;
 }
 
 @media (max-width: 470px) {
