@@ -2,10 +2,12 @@ import { APIProvider, Map, AdvancedMarker } from "@vis.gl/react-google-maps";
 import styles from "./StationMap.module.css";
 import { useState, useEffect } from "react";
 import { MarkerClusterer } from "@googlemaps/markerclusterer";
+import PropTypes from "prop-types";
+import { MapPin } from "@phosphor-icons/react";
 
-export default function StationMap() {
+export default function StationMap({ fuelType }) {
   const [position, setPosition] = useState({ lat: -36.89, lng: 174.7645 });
-  const [fuelType, setFuelType] = useState("91");
+  // const [fuelType, setFuelType] = useState();
   const [locations, setLocations] = useState([]);
 
   // Fetch request to get all petrol stations
@@ -47,16 +49,23 @@ export default function StationMap() {
             >
               <div className={styles.pinInfo}>
                 <div className={styles.fuelInfo}>
-                  <p className={styles.fuelType}>ZX{fuelType}</p>
+                  <p className={`${styles.fuelType} ${styles[fuelType]}`}>
+                    {fuelType === "95" && "ZX 95"}
+                    {fuelType === "91" && "Z 91"}
+                    {fuelType === "diesel" && "Z Diesel"}
+                  </p>
+
                   <p className={styles.fuelCost}>
-                    ${poi.fuelPrices[fuelType].toFixed(2)} L
+                    {poi.fuelPrices[fuelType] !== null || undefined ? (
+                      `$${poi.fuelPrices[fuelType].toFixed(2)} L`
+                    ) : (
+                      <span className={styles.priceNotAvailable}>
+                        Not available
+                      </span>
+                    )}
                   </p>
                 </div>
-                <img
-                  src="/src/assets/images/default.svg"
-                  alt="Map pin"
-                  className={styles.mapPin}
-                />
+                <MapPin size={32} color="#ed560e" /> {/* Use MapPin icon */}
               </div>
             </AdvancedMarker>
           ))}
@@ -65,3 +74,12 @@ export default function StationMap() {
     </div>
   );
 }
+
+// Add propTypes and defaultProps
+StationMap.propTypes = {
+  fuelType: PropTypes.string.isRequired,
+};
+
+StationMap.defaultProps = {
+  fuelType: "91", // Default fuel type if not provided
+};

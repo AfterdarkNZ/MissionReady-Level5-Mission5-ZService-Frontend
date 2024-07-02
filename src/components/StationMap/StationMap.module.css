@@ -38,3 +38,9 @@
 .mapPin {
   width: 4.4rem;
 }
+
+.priceNotAvailable {
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: 600;
+}
