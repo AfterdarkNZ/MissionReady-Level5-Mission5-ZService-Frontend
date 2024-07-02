@@ -88,21 +88,6 @@ export default function LocationInput({
     drinks: false,
   });
 
-  // const getStations = (userAddress) => {
-  //   fetch(`http://localhost:5000/api/distance-calc`, {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify({
-  //       address: userAddress,
-  //     }),
-  //   })
-  //     .then((response) => response.json())
-  //     .then((result) => {
-  //       setStations(result.result);
-  //       setFuelType(result.fuelType);
-  //     });
-  // };
-
   const getStations = async (userAddress) => {
     try {
       const response = await axios.post(
@@ -130,7 +115,10 @@ export default function LocationInput({
       );
       const { latitude, longitude } = position.coords;
       const address = await fromLatLng(latitude, longitude);
-      const components = address.results[0]?.address_components.reduce(
+      console.log("[useCurrentLocation]", { latitude, longitude, address });
+
+      // 3. Extract address components from Google Maps API response
+      const components = address.results[1]?.address_components.reduce(
         (acc, component) => {
           acc[component.types[0]] = component.long_name;
           return acc;
@@ -195,23 +183,6 @@ export default function LocationInput({
       return acc;
     }, {});
 
-    // const filters = {
-    //   dots: clickedButtons.dots,
-    //   premium: clickedButtons.premium,
-    //   extraFilters,
-    //   ...extraButtons.reduce((acc, { name }) => {
-    //     acc[name] = clickedButtons[name];
-    //     return acc;
-    //   }, {}),
-    // };
-
-    // const filters = {
-    //   dots: clickedButtons.dots,
-    //   premium: clickedButtons.premium,
-    //   extraFilters,
-    //   ...extraFilters,
-    // };
-
     // Filter for dots button and extra buttons
     const filters = {
       dots: clickedButtons.dots,
@@ -272,33 +243,35 @@ export default function LocationInput({
               suggestions,
               getSuggestionItemProps,
               loading,
-            }) => (
-              <div>
-                <input
-                  {...getInputProps({ placeholder: "Type address" })}
-                  className={styles.locationInput}
-                />
-                <div>{loading ? <div>...loading</div> : null}</div>
+            }) => {
+              return (
+                <div className={styles.inputContainer}>
+                  <input
+                    {...getInputProps({ placeholder: "Type address" })}
+                    className={styles.locationInput}
+                  />
+                  <div>{loading ? <div>...loading</div> : null}</div>
 
-                {suggestions.map((suggestion, index) => {
-                  const style = {
-                    backgroundColor: suggestion.active ? "#ed560e" : "#fff",
-                    position: "relative",
-                    fontSize: "1.5rem",
-                    padding: "1vh 1vw",
-                  };
+                  {suggestions.map((suggestion, index) => {
+                    const style = {
+                      backgroundColor: suggestion.active ? "#ed560e" : "#fff",
+                      position: "relative",
+                      fontSize: "1.5rem",
+                      padding: "1vh 1vw",
+                    };
 
-                  return (
-                    <div
-                      {...getSuggestionItemProps(suggestion, { style })}
-                      key={index}
-                    >
-                      {suggestion.description}
-                    </div>
-                  );
-                })}
-              </div>
-            )}
+                    return (
+                      <div
+                        {...getSuggestionItemProps(suggestion, { style })}
+                        key={index}
+                      >
+                        {suggestion.description}
+                      </div>
+                    );
+                  })}
+                </div>
+              );
+            }}
           </PlacesAutocomplete>
         </div>
         <div className={styles.filters}>

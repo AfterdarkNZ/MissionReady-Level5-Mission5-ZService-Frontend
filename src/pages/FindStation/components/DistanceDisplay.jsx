@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "../FindStation.module.css";
 import CardStation from "./CardStation";
+import { CaretDown, CaretUp } from "@phosphor-icons/react";
 
 export default function DistanceDisplay({ fuelType, stations, setStations }) {
   const [order, setOrder] = useState("nearest");
@@ -25,7 +26,11 @@ export default function DistanceDisplay({ fuelType, stations, setStations }) {
     }
   };
   return (
-    <div>
+    <div
+      className={`${styles.distanceContainer} ${
+        !showStationCards ? styles.minimiseContainer : ""
+      } `}
+    >
       <div className={styles.distanceDisplayTitleBanner}>
         <h3 className={styles.distanceDisplayTitle}>Within 20km</h3>
         <div className={styles.distanceDisplayBtnDiv}>

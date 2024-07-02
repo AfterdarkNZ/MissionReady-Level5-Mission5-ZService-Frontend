@@ -57,6 +57,10 @@
 .footerHeading:visited {
   text-decoration: underline;
 }
+.contactUsCol {
+  display: flex;
+  flex-flow: column;
+}
 
 .contactButton {
   height: 4.8rem;
@@ -149,4 +153,88 @@
   display: flex;
   align-items: center;
   gap: 1.2rem;
+}
+
+.copyText {
+  text-align: center;
+}
+
+@media (max-width: 66em) {
+  .grid {
+    max-width: 80%;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footerHeading {
+    font-size: 1.4rem;
+  }
+
+  .footerLink {
+    font-size: 1.2rem;
+  }
+
+  .contactButton {
+    width: 14rem;
+    height: 4.4rem;
+    align-self: flex-end;
+  }
+
+  .contactButtonText {
+    font-size: 1.4rem;
+  }
+
+  .contactButtonIcon {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
+  .socialIcon {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  .footerDivider {
+    width: 100%;
+  }
+
+  .footerBottom {
+    max-width: 80%;
+  }
+
+  .footerLegalList {
+    flex-flow: column;
+    gap: 1rem;
+    align-items: center;
+  }
+}
+
+/* Below 750 pixels (tablets) */
+/* Using em units, 750/16 = 47em */
+
+@media (max-width: 47em) {
+  .grid,
+  .footerDivider {
+    display: none;
+  }
+
+  .footer {
+    padding: 0;
+  }
+
+  .footerBottom {
+    flex-flow: column;
+    gap: 2rem;
+    align-items: center;
+    margin: 3.2rem auto 4rem;
+  }
+
+  .copyright {
+    flex-flow: column;
+  }
+}
+
+@media (max-width: 32em) {
+  .footer {
+    display: none;
+  }
 }
