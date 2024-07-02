@@ -9,6 +9,8 @@ import styles from "./Home.module.css";
 // image imports
 import evAtHome from "../../assets/images/ev-at-home.png";
 import fuelBackPlan from "../../assets/images/fuel-back-plan.png";
+import { Drop, PintGlass, GasPump, TruckTrailer } from "@phosphor-icons/react";
+import ServicesBtn from "./components/ServicesBtn";
 
 export default function Home() {
   return (
@@ -32,7 +34,23 @@ export default function Home() {
         paragraph="Moving furniture? Hangry for a pie and barista made coffee? Have a dirty car that needs some love? Come on in — we've got you covered."
         btnInfo="Products and services"
         background="white"
-      ></InfoSections>
+      >
+        <ServicesBtn text="Trailer hire">
+          <TruckTrailer />
+        </ServicesBtn>
+
+        <ServicesBtn text="Car wash">
+          <Drop />
+        </ServicesBtn>
+
+        <ServicesBtn text="LPG bottle swap">
+          <GasPump />
+        </ServicesBtn>
+
+        <ServicesBtn text="Food and drink">
+          <PintGlass />
+        </ServicesBtn>
+      </InfoSections>
       <Footer />
     </div>
   );

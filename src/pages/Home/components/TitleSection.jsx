@@ -7,7 +7,7 @@ export default function TitleSection() {
         Z is for <br /> New Zealand
       </h1>
       <h2 className={styles.subTitle}>
-        We're here to keep our <br /> communities and whanau <br /> moving
+        We're here to keep our communities and whanau moving
       </h2>
     </div>
   );

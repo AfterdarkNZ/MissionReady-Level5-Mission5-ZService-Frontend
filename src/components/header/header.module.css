@@ -23,6 +23,11 @@
   cursor: pointer;
 }
 
+.navBar input {
+  width: 15vw;
+  height: 4vh;
+}
+
 .underlined:hover {
   text-decoration: underline;
 }
@@ -61,11 +66,15 @@
   .navBar {
     position: absolute;
     background-color: white;
-    width: 50vw;
+    width: 100vw;
     margin-top: 5vh;
     padding-bottom: 5px;
     top: 0;
     right: 0;
+  }
+
+  .navBar input {
+    width: 50vw;
   }
 
   .navLink {
