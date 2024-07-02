@@ -47,7 +47,6 @@ export default function FindStation() {
           />
           <DistanceDisplay
             fuelType={fuelType}
-            setFuelType={setFuelType}
             stations={stations}
             setStations={setStations}
           />

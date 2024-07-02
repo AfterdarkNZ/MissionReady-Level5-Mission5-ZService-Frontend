@@ -29,7 +29,11 @@ export default function LocationInput({
     })
       .then((response) => response.json())
       .then((result) => {
-        setStations(result.result);
+        const resultStations = result.result;
+        const finalOrder = resultStations.toSorted((a, b) => {
+          return a.distance - b.distance;
+        });
+        setStations(finalOrder);
         setFuelType(result.fuelType);
       });
   };
