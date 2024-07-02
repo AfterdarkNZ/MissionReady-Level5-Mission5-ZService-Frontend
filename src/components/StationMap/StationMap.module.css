@@ -42,3 +42,9 @@
 .pinInfo:hover {
   transform: scale(1.1);
 }
+
+.priceNotAvailable {
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: 600;
+}

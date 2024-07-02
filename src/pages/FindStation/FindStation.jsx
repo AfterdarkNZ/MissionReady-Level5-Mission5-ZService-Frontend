@@ -1,15 +1,15 @@
+import { useState } from "react";
 import Header from "../../components/header/Header";
 import Footer from "../../components/Footer/Footer";
 import StationMap from "../../components/StationMap/StationMap";
 import styles from "./FindStation.module.css";
-import { MapPin, GasPump, Coffee, DotsThree } from "@phosphor-icons/react";
 import DistanceDisplay from "./components/DistanceDisplay";
 import LocationInput from "./components/LocationInput";
 import { useState, useEffect } from "react";
 
 export default function FindStation() {
   const [address, setAddress] = useState("");
-  const [fuelType, setFuelType] = useState("all");
+  const [fuelType, setFuelType] = useState("91");
   const [stations, setStations] = useState([]);
   const [locations, setLocations] = useState([]);
   const [position, setPosition] = useState({ lat: -36.89, lng: 174.7645 });
@@ -28,6 +28,7 @@ export default function FindStation() {
   return (
     <div>
       <Header />
+
       <div className={styles.mapContainer}>
         <StationMap
           fuelType={fuelType}
