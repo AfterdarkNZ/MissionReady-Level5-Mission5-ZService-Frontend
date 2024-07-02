@@ -31,6 +31,7 @@ export default function StationMap({ fuelType }) {
       >
         <Map
           defaultCenter={position}
+          // center={position}
           defaultZoom={13}
           className={styles.provider}
           mapId={mapID}
@@ -43,8 +44,8 @@ export default function StationMap({ fuelType }) {
               position={poi.location}
               clickable={true}
               onClick={() => {
-                console.log(poi.name);
-                setPosition(poi.location);
+                // console.log(poi.name);
+                props.setPosition(poi.location);
               }}
             >
               <div className={styles.pinInfo}>
