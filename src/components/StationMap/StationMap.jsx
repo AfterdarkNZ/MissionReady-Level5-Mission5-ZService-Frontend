@@ -1,13 +1,10 @@
 import { APIProvider, Map, AdvancedMarker } from "@vis.gl/react-google-maps";
 import styles from "./StationMap.module.css";
-import { useState, useEffect } from "react";
-import { MarkerClusterer } from "@googlemaps/markerclusterer";
 
 export default function StationMap(props) {
   const position = props.position;
   const fuelType = props.fuelType;
   const locations = props.locations;
-
   const apiKey = import.meta.env.VITE_MAP_API_KEY;
   const mapID = import.meta.env.VITE_MAP_ID;
 
