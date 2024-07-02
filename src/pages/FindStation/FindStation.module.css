@@ -264,6 +264,27 @@
 .showStationCardsBtn {
   display: none;
 }
+
+.directionBtnDiv {
+  width: 90%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.directionBtn {
+  background: linear-gradient(to left, #2f27a4, #1e196a);
+  border: none;
+  border-radius: 30px;
+  font-size: 1.5rem;
+  width: 40%;
+  padding: 3% 0;
+}
+
+.btnLink {
+  color: white;
+  text-decoration: none;
+}
+
 /* Below 1050 pixels (small laptops) */
 /* Using em units, 1050/16 = 66em */
 @media (max-width: 66em) {

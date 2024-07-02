@@ -20,22 +20,24 @@ export default function LocationInput({
 }) {
   const [getStation, setGetStation] = useState(false);
   const getStations = (userAddress) => {
-    fetch(`http://localhost:5000/api/distance-calc`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        address: userAddress,
-      }),
-    })
-      .then((response) => response.json())
-      .then((result) => {
-        const resultStations = result.result;
-        const finalOrder = resultStations.toSorted((a, b) => {
-          return a.distance - b.distance;
+    if (address) {
+      fetch(`http://localhost:5000/api/distance-calc`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          address: userAddress,
+        }),
+      })
+        .then((response) => response.json())
+        .then((result) => {
+          const resultStations = result.result;
+          const finalOrder = resultStations.toSorted((a, b) => {
+            return a.distance - b.distance;
+          });
+          setStations(finalOrder);
+          setFuelType(result.fuelType);
         });
-        setStations(finalOrder);
-        setFuelType(result.fuelType);
-      });
+    }
   };
 
   const useCurrentLocation = async () => {
@@ -56,7 +58,7 @@ export default function LocationInput({
       console.log("[useCurrentLocation]", { latitude, longitude, address });
 
       // 3. Extract address components from Google Maps API response
-      const components = address.results[0]?.address_components.reduce(
+      const components = address.results[1]?.address_components.reduce(
         (acc, component) => {
           acc[component.types[0]] = component.long_name;
           return acc;
